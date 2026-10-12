@@ -76,7 +76,7 @@
         <a class="phone-panel" href="tel:8315219681"><span class="phone-icon">☎</span><span><small>Prefer to call?</small><strong>(831) 521-9681</strong><small>Ask for Aidan Williams</small></span><span class="phone-arrow">↗</span></a>
         <div class="request-tip"><strong>Helpful to include</strong><p>Year, make, model, symptoms, warning lights, your location, and any photos or videos that help explain the job.</p></div>
       </div>
-      <form class="request-form" id="service-form">
+      <form class="request-form" id="service-form" action="https://formspree.io/f/mwlvqanl" method="POST" enctype="multipart/form-data">
         <div class="form-heading"><div><span>WMM / 01</span><h3>Service Request</h3></div><span class="required-note">* Required fields</span></div>
         <div class="form-grid">
           <label>Full name *<input name="name" autocomplete="name" required placeholder="Your name"></label>
@@ -89,11 +89,11 @@
           <label>Preferred date<input name="date" type="date" id="preferred-date"></label>
           <label>Preferred time<select name="time"><option value="">Flexible</option><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Evening</option></select></label>
           <label class="full">Describe the issue or work requested *<textarea name="details" required rows="5" placeholder="Symptoms, warning lights, parts you have, modifications planned, when it started, etc."></textarea></label>
-          <label class="full upload-label">Photos or videos (optional)<input name="attachments" id="attachments" type="file" accept="image/*,video/*" multiple><small id="file-help">You can select photos or videos on your device. Files are not uploaded by this demo form; see setup notes in README.md to enable secure submissions.</small></label>
+          <label class="full upload-label">Photos or videos (optional)<input name="attachments" id="attachments" type="file" accept="image/*,video/*" multiple><small id="file-help">Attach photos or videos to help explain the issue. Upload availability depends on your Formspree plan and limits.</small></label>
           <div class="full file-list" id="file-list" aria-live="polite"></div>
           <label class="full checkbox-label"><input type="checkbox" name="contactConsent" required><span>I agree that Aidan Williams may contact me about this service request. *</span></label>
         </div>
-        <button class="button button-red submit-button" type="submit">Prepare Service Request <span>↗</span></button>
+        <button class="button button-red submit-button" type="submit">Send Service Request <span>↗</span></button>
         <p class="form-footnote">Submitting a request does not book or confirm an appointment. I’ll contact you to confirm availability and details.</p>
         <div class="form-message" id="form-message" role="status" aria-live="polite"></div>
       </form>

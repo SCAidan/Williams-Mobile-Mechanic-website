@@ -8,17 +8,16 @@ A responsive static website starter for Williams Mobile Mechanic, owned by Aidan
 - `script.js` — mobile navigation, date field, and form interactions
 - `assets/williams-mobile-mechanic-logo.png` — provided logo
 
-## Important: connect the request form before publishing
-The form currently demonstrates the fields and front-end interaction only. It does **not** send customer information, upload files, email you, or book appointments yet. Do not advertise it as a working booking form until a backend has been connected.
+## Formspree connection
+The form is configured to submit to `https://formspree.io/f/mwlvqanl` using a normal HTML POST request. The form fields include customer contact details, vehicle details, service request, location, preferred date/time, notes, and optional attachments.
 
-### Simple option: Formspree
-1. Create a form at https://formspree.io/ and set the destination to your business email.
-2. Copy the form endpoint they provide (it looks like `https://formspree.io/f/xxxxxxxx`).
-3. In `index.html`, add `action="YOUR_FORM_ENDPOINT" method="POST" enctype="multipart/form-data"` to the `<form>` tag.
-4. In `script.js`, remove the `form.addEventListener('submit', ...)` demo handler so the browser can submit the form to your provider. Follow the provider's current instructions for file uploads; attachment limits and paid-plan requirements may apply.
-5. Test the form on the published site using a test email and test attachment. Confirm you receive the message before relying on it for leads.
+Before relying on it for leads:
+1. Open your Formspree dashboard and confirm the recipient email / notification settings.
+2. Publish the site and submit a test request. Check the Formspree submissions dashboard and your email. Complete any email verification Formspree requests.
+3. Test a small image upload. Formspree file uploads are plan-dependent; the current docs say uploads are available on Personal, Professional, and Business plans, with up to 10 files per submission and 25 MB per file. Confirm your account plan and current limits.
+4. Appointment requests are not confirmed automatically; contact the customer to confirm availability.
 
-For more control, a small backend or booking service can be added later. Never put secret API keys in public JavaScript or in this repository.
+The form does not create calendar bookings or a CRM record yet. Never put secret API keys in public JavaScript or in this repository.
 
 ## Publish with GitHub Pages
 1. Download and unzip this project.

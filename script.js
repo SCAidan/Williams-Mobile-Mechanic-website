@@ -47,13 +47,5 @@ if (fileInput && fileList) {
   });
 }
 
-const form = document.getElementById('service-form');
-const message = document.getElementById('form-message');
-if (form && message) {
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    message.className = 'form-message show';
-    message.textContent = 'This is the front-end starter form and is not connected to email or a booking system yet. Your details have not been sent. Before publishing, connect a form backend (setup steps are in README.md). For now, call (831) 521-9681 to request service.';
-    message.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  });
-}
+// The service request form submits directly to Formspree via its HTML action.
+// Formspree handles delivery; appointments still require confirmation by Aidan.
