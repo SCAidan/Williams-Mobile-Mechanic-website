@@ -1,35 +1,40 @@
-# Williams Mobile Mechanic website
+# Williams Mobile Mechanic — refined website
 
-A responsive static website starter for Williams Mobile Mechanic, owned by Aidan Williams.
+A build-free, multi-page website based on the existing Williams site and the page structure of The Cleaning Machine. The original phone number and Formspree endpoint are preserved.
 
-## Files
-- `index.html` — page content and service request form
-- `style.css` — responsive design
-- `script.js` — mobile navigation, date field, and form interactions
-- `assets/williams-mobile-mechanic-logo.png` — provided logo
+## Open and review
+Open index.html in a browser after extracting the ZIP. All pages work without a build step. Gallery links open images directly if JavaScript is disabled; JavaScript adds filtering and a keyboard-accessible enlarged viewer.
 
-## Formspree connection
-The form is configured to submit to `https://formspree.io/f/mwlvqanl` using a normal HTML POST request. The form fields include customer contact details, vehicle details, service request, location, preferred date/time, notes, and optional attachments.
+## Replace the website in GitHub
+1. Unzip the download on your computer.
+2. Open SCAidan/Williams-Mobile-Mechanic-website on GitHub.
+3. Choose Add file → Upload files.
+4. Drag the CONTENTS of the unzipped folder into GitHub, including the whole assets folder. Do not upload the ZIP itself or an extra outer folder.
+5. Commit changes. Existing matching filenames are replaced; new pages and assets are added.
+6. Wait for the deployment, then refresh the website. If needed, hard-refresh to clear cached CSS.
 
-Before relying on it for leads:
-1. Open your Formspree dashboard and confirm the recipient email / notification settings.
-2. Publish the site and submit a test request. Check the Formspree submissions dashboard and your email. Complete any email verification Formspree requests.
-3. Test a small image upload. Formspree file uploads are plan-dependent; the current docs say uploads are available on Personal, Professional, and Business plans, with up to 10 files per submission and 25 MB per file. Confirm your account plan and current limits.
-4. Appointment requests are not confirmed automatically; contact the customer to confirm availability.
+Required at the repository root: index.html, services.html, about.html, custom-installs.html, gallery.html, privacy.html, style.css, script.js, and the assets/ directory.
 
-The form does not create calendar bookings or a CRM record yet. Never put secret API keys in public JavaScript or in this repository.
+The assets folder must remain a real folder. Do not name files with a colon, such as assets:filename.png. Old unused root-level logo files can remain; the updated pages use assets/logo.png.
 
-## Publish with GitHub Pages
-1. Download and unzip this project.
-2. In your GitHub repository, choose **Add file → Upload files**.
-3. Upload `index.html`, `style.css`, `script.js`, `README.md`, and the `assets` folder contents while preserving the folder structure.
-4. Open **Settings → Pages** in the repository.
-5. Choose **Deploy from a branch**, select `main` and `/(root)`, then save.
-6. Wait for GitHub Pages to publish and open the URL shown there.
+## Form and booking
+The request form posts to the existing https://formspree.io/f/mwlvqanl endpoint. Appointments are requests and require Aidan's confirmation. This website does not create calendar bookings or CRM records.
 
-## Customize before launch
-- Confirm the service-area wording.
-- Add real photos of completed brake, maintenance, audio, and suspension jobs.
-- Add a business email and any social links you want to show.
-- Connect and test the form backend.
-- Consider adding privacy terms if you collect personal details, vehicle locations, or customer-uploaded photos/videos.
+Verify the recipient in Formspree, submit a real test after publishing, and confirm delivery. Uploads depend on the Formspree account plan. A direct text option is included so customers can send photos when uploads are unavailable. A live submission has not been sent during development.
+
+## What changed
+- Separate Home, Services, About, Custom Installs, Gallery, and Privacy pages.
+- Prominent branding and a real completed air suspension photo on the homepage.
+- All 11 supplied photos optimized for web delivery, with orientation corrected and screenshot borders removed from photos 1 and 2.
+- Photos 1, 2, and 5 grouped as one build; photo 2 identified as completed.
+- Photos 3 and 4 grouped as audio; photo 6 described as a separate concealed air suspension installation.
+- Remaining photos described as work in progress without claiming specific unverified repairs or finished results.
+- Gallery filters and enlarged viewing with next/previous arrows and Escape to close.
+- Mobile navigation, sticky call/text/request actions, service selection links, local date minimum, and privacy information.
+- Distinct page titles and descriptions, descriptive alt text, and basic business structured data.
+
+## Verification
+Local file paths and anchor targets were checked across all six pages. All image files were decoded. JavaScript syntax was checked with Node. Browser rendering and live form delivery were not tested in this environment.
+
+## Future updates
+Replace images in assets/ and update the captions in gallery.html as better project photos become available. Do not add testimonials, credentials, or claims unless verified. Once a final custom domain is chosen, add absolute canonical URLs, a sitemap, and absolute social sharing image URLs using that domain.
