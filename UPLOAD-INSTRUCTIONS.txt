@@ -1,0 +1,3 @@
+Unzip this download. Upload index.html, gallery.html, and services.html to the MAIN page (root) of your existing Williams-Mobile-Mechanic-website repository. Commit the changes. These replace the existing three files. No assets folder, CSS, JavaScript, or images need to be changed.
+
+Changes: mechanical gallery descriptions now describe suspension, brakes, drivetrain and engine work from completed jobs. Diagnostics and troubleshooting are explicitly described on Home and Services. Photos taken during a job are described as process photos from completed work.
