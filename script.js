@@ -4,14 +4,14 @@ const nav = document.querySelector('.nav-links');
 function closeMenu() {
   if (!menuButton || !nav) return;
   nav.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false');
-  menuButton.setAttribute('aria-label', 'Open navigation'); menuButton.textContent = '☰';
+  menuButton.setAttribute('aria-label', 'Open navigation'); menuButton.textContent = 'Menu';
 }
 if (menuButton && nav) {
   menuButton.addEventListener('click', () => {
     const open = !nav.classList.contains('open');
     nav.classList.toggle('open', open); menuButton.setAttribute('aria-expanded', String(open));
     menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    menuButton.textContent = open ? '×' : '☰';
+    menuButton.textContent = open ? 'Close menu' : 'Menu';
   });
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
@@ -31,6 +31,7 @@ selectService(new URLSearchParams(location.search).get('service'));
 document.querySelectorAll('[data-service]').forEach(a => {
   const value = a.dataset.service;
   a.href = 'index.html?service=' + encodeURIComponent(value) + '#request';
+  if(document.body.classList.contains('homepage')) a.addEventListener('click',e=>{if(e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();selectService(value);location.hash='request';const message=document.getElementById('form-message');if(message){message.classList.add('show');message.textContent=value+' selected. Add your vehicle details below. This is a request, not a confirmed appointment.'}});
 });
 const upload = document.getElementById('attachments');
 const filesList = document.getElementById('file-list');
