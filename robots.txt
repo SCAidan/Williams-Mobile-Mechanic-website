@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://scaidan.github.io/Williams-Mobile-Mechanic-website/sitemap.xml
